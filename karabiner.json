@@ -8,9 +8,24 @@
                         "description": "Direct App Switching",
                         "manipulators": [
                             {
-                                "description": "Alt + Shift + 1 -> Set current app as main slot",
+                                "description": "Backtick -> Main App Slot (dynamic)",
                                 "from": {
-                                    "key_code": "1",
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": {
+                                        "mandatory": ["left_option"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "if [ -f /tmp/karabiner_main_app ]; then open -a \"$(cat /tmp/karabiner_main_app)\"; else open -a 'Arc'; fi"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Alt + Shift + Backtick -> Set current app as main slot",
+                                "from": {
+                                    "key_code": "grave_accent_and_tilde",
                                     "modifiers": {
                                         "mandatory": ["left_option", "left_shift"]
                                     }
@@ -23,24 +38,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Alt + 1 -> Main App Slot (dynamic)",
+                                "description": "Alt + 1 -> VS Code",
                                 "from": {
                                     "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "if [ -f /tmp/karabiner_main_app ]; then open -a \"$(cat /tmp/karabiner_main_app)\"; else open -a 'Visual Studio Code'; fi"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Alt + 2 -> VS Code",
-                                "from": {
-                                    "key_code": "2",
                                     "modifiers": {
                                         "mandatory": ["left_option"]
                                     }
@@ -53,9 +53,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Alt + 3 -> iTerm",
+                                "description": "Alt + 2 -> iTerm",
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "2",
                                     "modifiers": {
                                         "mandatory": ["left_option"]
                                     }
@@ -68,9 +68,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Alt + 4 -> Sequel Ace",
+                                "description": "Alt + 3 -> Sequel Ace",
                                 "from": {
-                                    "key_code": "4",
+                                    "key_code": "3",
                                     "modifiers": {
                                         "mandatory": ["left_option"]
                                     }
@@ -83,9 +83,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Alt + 5 -> Sublime Text",
+                                "description": "Alt + 4 -> Sublime Text",
                                 "from": {
-                                    "key_code": "5",
+                                    "key_code": "4",
                                     "modifiers": {
                                         "mandatory": ["left_option"]
                                     }
@@ -138,6 +138,21 @@
                                 "to": [
                                     {
                                         "shell_command": "open -a 'Notion'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Alt + F -> Finder",
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": ["left_option"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Finder'"
                                     }
                                 ],
                                 "type": "basic"
@@ -246,6 +261,23 @@
                                     {
                                         "key_code": "tab",
                                         "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Caps Lock alone -> Main App Slot (dynamic)",
+                                "from": {
+                                    "key_code": "caps_lock"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "shell_command": "if [ -f /tmp/karabiner_main_app ]; then open -a \"$(cat /tmp/karabiner_main_app)\"; else open -a 'Arc'; fi"
                                     }
                                 ],
                                 "type": "basic"
