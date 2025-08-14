@@ -3,7 +3,45 @@
         {
             "complex_modifications": {
                 "rules": [
-
+                    {
+                        "description": "Desktop switching with Option + F1/F2",
+                        "manipulators": [
+                            {
+                                "description": "Option + F1 -> Desktop 1",
+                                "from": {
+                                    "key_code": "f1",
+                                    "modifiers": {
+                                        "mandatory": ["option"],
+                                        "optional": ["fn"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "1",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Option + F2 -> Desktop 2",
+                                "from": {
+                                    "key_code": "f2",
+                                    "modifiers": {
+                                        "mandatory": ["option"],
+                                        "optional": ["fn"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "2",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Direct App Switching",
                         "manipulators": [
