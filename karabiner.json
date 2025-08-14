@@ -39,6 +39,40 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "description": "Ctrl + F1 -> Move window left a space",
+                                "from": {
+                                    "key_code": "f1",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["fn"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["control", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Ctrl + F2 -> Move window right a space",
+                                "from": {
+                                    "key_code": "f2",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["fn"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["control", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
